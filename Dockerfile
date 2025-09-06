@@ -2,7 +2,6 @@ FROM docker.n8n.io/n8nio/n8n
 
 # adiciona ferramentas úteis
 USER root
-RUN apk add --no-cache mysql-client bash iputils busybox-extras
 
 RUN set -eux; \
   if ! command -v apk >/dev/null 2>&1; then \
