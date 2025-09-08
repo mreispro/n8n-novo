@@ -10,7 +10,7 @@ RUN set -eux; \
   fi; \
   apk add --no-cache \
     mariadb-client \        # fornece mariadb, mariadb-admin (substitui mysql/mysqladmin)
-    busybox-extras \        # fornece nc (netcat) e traceroute
+#    busybox-extras \        # fornece nc (netcat) e traceroute
     iputils \               # fornece ping
     mtr \                   # mtr (traceroute interativo)
     bash \                  # shell confortável p/ scripts
