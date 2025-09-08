@@ -3,19 +3,6 @@ FROM docker.n8n.io/n8nio/n8n
 # adiciona ferramentas úteis
 USER root
 
-RUN set -eux; \
-  if ! command -v apk >/dev/null 2>&1; then \
-    echo "Esta imagem NÃO é Alpine. Use o Dockerfile para Debian/Ubuntu." >&2; \
-    exit 1; \
-  fi; \
-  apk add --no-cache \
-    mariadb-client \        # fornece mariadb, mariadb-admin (substitui mysql/mysqladmin)
-#    busybox-extras \        # fornece nc (netcat) e traceroute
-#    iputils \               # fornece ping
-    mtr \                   # mtr (traceroute interativo)
-    bash \                  # shell confortável p/ scripts
-    curl;                   # útil p/ testes HTTP/healthchecks
-
 # (opcional) garante pasta do usuário do n8n com permissão correta
 RUN mkdir -p /home/node/.n8n && chown -R node:node /home/node/.n8n
 
